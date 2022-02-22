@@ -1,6 +1,6 @@
-include<stdio.h>
-#define chess_size 8
-void printChess()
+#include <stdio.h>
+#define ChessSize 8
+void PrintChess()
 {
     int i = 0, j = 0;
     char ChessViz[8][8]
@@ -13,9 +13,9 @@ void printChess()
                "PPPPPPPP",
                "RNBQKBNR"};
     printf("\n");
-    for (i = 0; i < chess_size; i++) {
+    for (i = 0; i < ChessSize; i++) {
         printf("%d   ", i + 1);
-        for (j = 0; j < chess_size; j++) {
+        for (j = 0; j < ChessSize; j++) {
             printf("%c  ", ChessViz[i][j]);
         }
         printf("\n");
@@ -26,6 +26,6 @@ void printChess()
 
 int main()
 {
-    printChess();
+    PrintChess();
     return 0;
 }
