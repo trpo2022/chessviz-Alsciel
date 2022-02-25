@@ -3,7 +3,7 @@
 void PrintChess()
 {
     int i = 0, j = 0;
-    char ChessViz[8][8]
+    char ChessViz[ChessSize][ChessSize]
             = {"rnbqkbnr",
                "pppppppp",
                "        ",
