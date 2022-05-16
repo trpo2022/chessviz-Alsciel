@@ -28,6 +28,7 @@ TEST_SOURCES = $(shell find $(TEST_DIR) -name '*.$(SRC_EXT)')
 TEST_OBJECTS = $(TEST_SOURCES:$(TEST_DIR)/%.$(SRC_EXT)=$(OBJ_DIR)/$(TEST_DIR)/%.o)
 
 DEPS = $(APP_OBJECTS:.o=.d) $(LIB_OBJECTS:.o=.d)
+DEPS_T = $(TEST_OBJECTS:.o=.d)
 
 .PHONY: all
 all: $(APP_PATH)
@@ -57,7 +58,7 @@ clean:
 .PHONY: test
 test: $(TEST_PATH)
 
--include $(DEPS)
+-include $(DEPS) $(DEPS_T)
 
 $(TEST_PATH): $(TEST_OBJECTS) $(LIB_PATH)
 	$(CC) $(CFLAGS) $(CPPFLAGST) $^ -o $@ $(LDFLAGS) $(LDLIBS)
