@@ -1,2 +1,5 @@
 *.out
 main
+bin/*
+*.[aod]
+
