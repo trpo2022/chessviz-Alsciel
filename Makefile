@@ -4,6 +4,7 @@ TEST_NAME = test
 
 CFLAGS = -Wall -Wextra -Werror
 CPPFLAGS = -I src -MP -MMD
+CPPFLAGST = -I thirdparty -MP -MMD
 LDFLAGS =
 LDLIBS =
 
@@ -55,14 +56,17 @@ clean:
 	find $(OBJ_DIR) -name '*.out' -exec $(RM) '{}' \;
 	find $(OBJ_DIR) -name '*.d' -exec $(RM) '{}' \;)
 
+.PHONY: gotest
+gotest:	
+	./$(TEST_PATH)
+
 .PHONY: test
 test: $(TEST_PATH)
-
--include $(DEPS) $(DEPS_T)
 
 $(TEST_PATH): $(TEST_OBJECTS) $(LIB_PATH)
 	$(CC) $(CFLAGS) $(CPPFLAGST) $^ -o $@ $(LDFLAGS) $(LDLIBS)
 
-.PHONY: gotest
-gotest:	
-	./$(TEST_PATH)
+$(TEST_OBJECTS): $(TEST_SOURCES)
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(CPPFLAGST) $< -o $@
+
+-include $(DEPS) $(DEPS_T)
