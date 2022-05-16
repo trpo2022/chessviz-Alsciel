@@ -21,6 +21,7 @@ int main()
     char b[7];
     while (n == MoveNum) {
         MoveNum += 1;
+	printf("Enter step number: ");
         scanf("%d. ", &n);
         if (MoveNum == n) {
             scanf("%s", w);

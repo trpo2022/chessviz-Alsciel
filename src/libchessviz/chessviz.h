@@ -20,7 +20,7 @@ void WhiteKing(char board[boardsize][boardsize], char w[7]);
 void BlackKing(char board[boardsize][boardsize], char w[7]);
 void WhiteRook(char board[boardsize][boardsize], char w[7]);
 void BlackRook(char board[boardsize][boardsize], char w[7]);
-void WhiteBishop(char board[boardsize]boardsize], char w[7]);
+void WhiteBishop(char board[boardsize][boardsize], char w[7]);
 void BlackBishop(char board[boardsize][boardsize], char w[7]);
 void WhiteKnight(char board[boardsize][boardsize], char w[7]);
 void BlackKnight(char board[boardsize][boardsize], char w[7]);
@@ -30,8 +30,3 @@ void White(char board[boardsize][boardsize], char w[7]);
 void Black(char board[boardsize][boardsize], char b[7]);
 int WinWhite(char board[boardsize][boardsize], char w[7], int n);
 int WinBlack(char board[boardsize][boardsize], char w[7], char b[7], int n);
-
-int w_pass = 0;
-int w_x = -1;
-int b_pass = 0;
-int b_x = -1;

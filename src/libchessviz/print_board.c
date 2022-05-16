@@ -28,9 +28,9 @@ void PrintBoard(char c[boardsize][boardsize])
 {
     printf("\n");
     for (int i = 0; i < boardsize; i++) {
-        printf("%d  | ", boardsize - i);
+        printf("%d | ", boardsize - i);
         for (int j = 0; j < boardsize; j++)
-            printf("%d ", boardrr[i][j]);
+            printf("%c ", c[i][j]);
         printf("\n");
     }
     printf("  +-----------------\n");
